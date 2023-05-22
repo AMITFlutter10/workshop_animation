@@ -23,21 +23,15 @@ class _FavouriteIconScreenState extends State<FavouriteIconScreen>
       vsync: this,
       duration: const Duration(milliseconds: 200),
     );
-    _colorAnimation = ColorTween(
-      begin: Colors.grey,
-      end: Colors.red,
-    ).animate(_controller);
+    _colorAnimation =
+        ColorTween(begin: Colors.grey, end: Colors.red).animate(_controller);
 
     _sizeAnimation = TweenSequence(
       <TweenSequenceItem<double>>[
         TweenSequenceItem<double>(
-          tween: Tween<double>(begin: 30, end: 50),
-          weight: 50,
-        ),
+            tween: Tween<double>(begin: 30, end: 50), weight: 50),
         TweenSequenceItem<double>(
-          tween: Tween<double>(begin: 50, end: 30),
-          weight: 50,
-        )
+            tween: Tween<double>(begin: 50, end: 30), weight: 50)
       ],
     ).animate(_controller);
 

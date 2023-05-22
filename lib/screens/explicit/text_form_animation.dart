@@ -22,7 +22,7 @@ class _TextFormAnimationState extends State<TextFormAnimation>
   _buildAnimation() {
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 200),
     );
     _offsetAnimation = TweenSequence(
       <TweenSequenceItem<Offset>>[
@@ -109,6 +109,11 @@ class _TextFormAnimationState extends State<TextFormAnimation>
                       _controller!
                         ..forward()
                         ..repeat();
+
+                      Future.delayed(const Duration(seconds: 1)).then((value) {
+                        _controller!.stop();
+                        _controller!.reset();
+                      });
                     }
                   } else {
                     if (_controller!.isAnimating) {
